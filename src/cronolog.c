@@ -386,6 +386,7 @@ main(int argc, char **argv)
 
     for (;;)
     {
+        memset(read_buf, 0x0, sizeof(read_buf));
 	/* Read a buffer's worth of log file data, exiting on errors
 	 * or end of file.
 	 */
@@ -439,6 +440,7 @@ main(int argc, char **argv)
 	    perror(filename);
 	    exit(5);
 	}
+        printf("%s ", read_buf);
     }
 
     /* NOTREACHED */
